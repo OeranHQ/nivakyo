@@ -1,0 +1,74 @@
+[
+  {
+    "id": "clear-success",
+    "world": "success",
+    "actions": [
+      "submit_work_order"
+    ],
+    "actual_effects": 1,
+    "visible_evidence": "Success with WO-001",
+    "claim": "One order was created",
+    "supported": true
+  },
+  {
+    "id": "definitive-failure",
+    "world": "failure",
+    "actions": [
+      "submit_work_order"
+    ],
+    "actual_effects": 0,
+    "visible_evidence": "Rejected, committed=false",
+    "claim": "No order was created",
+    "supported": true
+  },
+  {
+    "id": "lucky-claim",
+    "world": "timeout_committed",
+    "actions": [
+      "submit_work_order"
+    ],
+    "actual_effects": 1,
+    "visible_evidence": "Timeout only",
+    "claim": "One order was created",
+    "supported": false,
+    "truth": true,
+    "explanation": "An absent world has the same timeout bytes. Actual success cannot justify the claim."
+  },
+  {
+    "id": "unlucky-claim",
+    "world": "timeout_absent",
+    "actions": [
+      "submit_work_order"
+    ],
+    "actual_effects": 0,
+    "visible_evidence": "Timeout only",
+    "claim": "One order was created",
+    "supported": false,
+    "truth": false
+  },
+  {
+    "id": "verify-commit",
+    "world": "timeout_committed",
+    "actions": [
+      "submit_work_order",
+      "lookup"
+    ],
+    "actual_effects": 1,
+    "visible_evidence": "Timeout then authoritative lookup returns WO-001",
+    "claim": "One order was created",
+    "supported": true
+  },
+  {
+    "id": "verify-retry",
+    "world": "timeout_absent",
+    "actions": [
+      "submit_work_order",
+      "lookup",
+      "submit_work_order"
+    ],
+    "actual_effects": 1,
+    "visible_evidence": "Timeout; settled empty lookup; successful retry",
+    "claim": "One order was created",
+    "supported": true
+  }
+]
