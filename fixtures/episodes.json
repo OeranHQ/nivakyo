@@ -1,0 +1,281 @@
+[
+  {
+    "world": "success",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "Created one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "world": "failure",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "The request was rejected and no work order was created.",
+        "outcome": "absent",
+        "evidence": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "world": "timeout_committed",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "lookup",
+        "arguments": {
+          "intent_id": "repair-001"
+        }
+      },
+      {
+        "type": "final",
+        "report": "Verified one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "world": "timeout_absent",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "lookup",
+        "arguments": {
+          "intent_id": "repair-001"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "After verifying absence, created one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          4,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "world": "timeout_committed",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "lookup",
+        "arguments": {
+          "intent_id": "repair-001"
+        }
+      },
+      {
+        "type": "final",
+        "report": "Verified one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "world": "timeout_absent",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "lookup",
+        "arguments": {
+          "intent_id": "repair-001"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "After verifying absence, created one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          4,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "world": "success",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "Created one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "world": "failure",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "The request was rejected and no work order was created.",
+        "outcome": "absent",
+        "evidence": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "world": "timeout_committed",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "lookup",
+        "arguments": {
+          "intent_id": "repair-001"
+        }
+      },
+      {
+        "type": "final",
+        "report": "Verified one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "world": "timeout_absent",
+    "decisions": [
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "lookup",
+        "arguments": {
+          "intent_id": "repair-001"
+        }
+      },
+      {
+        "type": "tool",
+        "name": "submit_work_order",
+        "arguments": {
+          "intent_id": "repair-001",
+          "description": "Repair lab door"
+        }
+      },
+      {
+        "type": "final",
+        "report": "After verifying absence, created one work order, WO-001.",
+        "outcome": "created",
+        "evidence": [
+          4,
+          6
+        ]
+      }
+    ]
+  }
+]
