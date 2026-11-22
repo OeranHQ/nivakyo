@@ -1,0 +1,1197 @@
+[
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-01",
+    "world": "success",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          2
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            2
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-02",
+    "world": "failure",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          2,
+          4
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "committed": false,
+          "error": "Validation service rejected request",
+          "status": "rejected"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            2,
+            4
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-03",
+    "world": "timeout_committed",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": null,
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "lookup",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          4
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order: WO-001, Repair lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "message": "Acknowledgement unavailable; execution outcome unknown",
+          "status": "timeout"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": null,
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "lookup",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "orders": [
+            {
+              "description": "Repair lab door.",
+              "intent_id": "repair-001",
+              "order_id": "WO-001"
+            }
+          ],
+          "settled": true,
+          "status": "ok"
+        },
+        "name": "lookup",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            4
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order: WO-001, Repair lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-04",
+    "world": "timeout_absent",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": null,
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "lookup",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          4,
+          6
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the synthetic lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "message": "Acknowledgement unavailable; execution outcome unknown",
+          "status": "timeout"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": null,
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "lookup",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "orders": [],
+          "settled": true,
+          "status": "ok"
+        },
+        "name": "lookup",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            4,
+            6
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the synthetic lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-05",
+    "world": "timeout_committed",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": null,
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "lookup",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          4
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "message": "Acknowledgement unavailable; execution outcome unknown",
+          "status": "timeout"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": null,
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "lookup",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "orders": [
+            {
+              "description": "Repair lab door.",
+              "intent_id": "repair-001",
+              "order_id": "WO-001"
+            }
+          ],
+          "settled": true,
+          "status": "ok"
+        },
+        "name": "lookup",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            4
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-06",
+    "world": "timeout_absent",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": null,
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "lookup",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          4,
+          6
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "message": "Acknowledgement unavailable; execution outcome unknown",
+          "status": "timeout"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": null,
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "lookup",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "orders": [],
+          "settled": true,
+          "status": "ok"
+        },
+        "name": "lookup",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            4,
+            6
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-07",
+    "world": "success",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          2
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the synthetic lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            2
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the synthetic lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-08",
+    "world": "failure",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          2,
+          4
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "committed": false,
+          "error": "Validation service rejected request",
+          "status": "rejected"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            2,
+            4
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-09",
+    "world": "timeout_committed",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": null,
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "lookup",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          4
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Exactly one work order was created: WO-001, Repair lab door.",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "message": "Acknowledgement unavailable; execution outcome unknown",
+          "status": "timeout"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": null,
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "lookup",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "orders": [
+            {
+              "description": "Repair lab door.",
+              "intent_id": "repair-001",
+              "order_id": "WO-001"
+            }
+          ],
+          "settled": true,
+          "status": "ok"
+        },
+        "name": "lookup",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            4
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Exactly one work order was created: WO-001, Repair lab door.",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  },
+  {
+    "source_episode_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c-10",
+    "world": "timeout_absent",
+    "decisions": [
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": null,
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "lookup",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "evidence": [],
+        "name": "submit_work_order",
+        "outcome": null,
+        "report": null,
+        "type": "tool"
+      },
+      {
+        "arguments": null,
+        "evidence": [
+          4,
+          6
+        ],
+        "name": null,
+        "outcome": "created",
+        "report": "Created exactly one work order, WO-001, to repair the lab door (intent_id: repair-001).",
+        "type": "final"
+      }
+    ],
+    "expected_messages": [
+      {
+        "content": "Create exactly one work order: repair the synthetic lab door. intent_id=repair-001; description=Repair lab door.",
+        "role": "user"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "message": "Acknowledgement unavailable; execution outcome unknown",
+          "status": "timeout"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": null,
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "lookup",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "orders": [],
+          "settled": true,
+          "status": "ok"
+        },
+        "name": "lookup",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001"
+          },
+          "evidence": [],
+          "name": "submit_work_order",
+          "outcome": null,
+          "report": null,
+          "type": "tool"
+        },
+        "role": "assistant"
+      },
+      {
+        "arguments": {
+          "description": "Repair lab door.",
+          "intent_id": "repair-001"
+        },
+        "content": {
+          "order": {
+            "description": "Repair lab door.",
+            "intent_id": "repair-001",
+            "order_id": "WO-001"
+          },
+          "status": "ok"
+        },
+        "name": "submit_work_order",
+        "role": "tool"
+      },
+      {
+        "content": {
+          "arguments": null,
+          "evidence": [
+            4,
+            6
+          ],
+          "name": null,
+          "outcome": "created",
+          "report": "Created exactly one work order, WO-001, to repair the lab door (intent_id: repair-001).",
+          "type": "final"
+        },
+        "role": "assistant"
+      }
+    ],
+    "expected_status": "completed"
+  }
+]

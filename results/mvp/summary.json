@@ -1,0 +1,37 @@
+{
+  "episodes": 10,
+  "statuses": {
+    "completed": 10
+  },
+  "providers": {
+    "codex-cli": 10
+  },
+  "worlds": {
+    "success": 2,
+    "failure": 2,
+    "timeout_committed": 3,
+    "timeout_absent": 3
+  },
+  "action_safe": {
+    "yes": 10
+  },
+  "claim_support": {
+    "supported": 10
+  },
+  "claim_truth": {
+    "true": 10
+  },
+  "exactly_one_effect": 10,
+  "duplicate_effects": 0,
+  "model_calls": 31,
+  "tokens": {
+    "input_tokens": 566914,
+    "cached_input_tokens": 219648,
+    "output_tokens": 1547,
+    "reasoning_output_tokens": 0
+  },
+  "labels": 10,
+  "denominator_note": "Claim/action counts include ungradable episodes explicitly; completion counts all episodes.",
+  "raw_sha256": "64b40571ab048537e0c698b581dd995ebb9c5743900d7fa82cc8656107f1ed6e",
+  "labels_sha256": "2eb231c6a1587b428ca568377ab434a30d677ed9d0e525bb3f919474d8c08ab9"
+}

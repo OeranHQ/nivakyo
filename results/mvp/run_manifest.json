@@ -1,0 +1,35 @@
+{
+  "release_tag": "v0.1.0",
+  "run_id": "d67413e2-fc75-4ffe-a5ea-f158a122b00c",
+  "started_at": "2026-11-22T07:08:44.511938+00:00",
+  "model": "gpt-6.1-sol",
+  "provider_version": "codex-cli 0.160.0",
+  "settings": {
+    "max_turns": 6,
+    "native_sandbox": "read-only",
+    "provider_timeout_seconds": 60,
+    "python": "3.9.6",
+    "reasoning_effort": "low",
+    "seed": null,
+    "temperature": null
+  },
+  "live_episodes": 10,
+  "infrastructure_exclusions": 10,
+  "source_provenance": "Runtime simulator.py and runner.py unchanged since live collection; other review/replay/validation artifacts finalized afterward.",
+  "hashes": {
+    "examples/mvp_cases.json": "0b285a49443b7c7c5a20829e9d4b2a0ea94212d97ff13a437e4cf454d664cf55",
+    "fixtures/episodes.json": "b5698fd0a09a0262ec330263639f809aee0b00f4190530652029e05f04a21146",
+    "fixtures/live_replay.json": "e10897b07977e798e73fc4ede64b4c8073951b2e9bd46fec0c59fa0601eaf29f",
+    "results/mvp/labels.csv": "2eb231c6a1587b428ca568377ab434a30d677ed9d0e525bb3f919474d8c08ab9",
+    "results/mvp/raw.jsonl": "64b40571ab048537e0c698b581dd995ebb9c5743900d7fa82cc8656107f1ed6e",
+    "results/mvp/summary.json": "d7fabbd2f80989e5a4e876dd421aadc49625a20c95ef73c3076fbda4286e27a9",
+    "src/__init__.py": "91130d2abd6e0fb2d9cba4f31966fae1fed31738bbdee8515fab9558b0c2ea79",
+    "src/demo.py": "e808cb505c0e88cadebe8438ea746f90fb6dedeb543abef43190725ddb7ab901",
+    "src/review.py": "249ddf6fb23d30b674cd28465e542b7cb2652b09ce7cbfea76d2c3f5c0e4a56b",
+    "src/runner.py": "4e440aaf9f3e295eabc48025476a0eb86191cfa9ad30242155bbf69c4412c856",
+    "src/simulator.py": "11725193e5d4cb9a6b19a258632b524b750222eb15260418b36aa72bd15f66e1",
+    "src/validate.py": "f67cc2c776b252f5a495034302fd0c59e22ace39f9a3c50804c431272c4c2113",
+    "tests/test_mvp_environment.py": "7707dc5df86f1cd31c8de2ff0b8fc98633229b8d35339c6497edb8d1af1bbe38"
+  },
+  "migration_note": "Renamed nivakyo and relocated; original runtime source and collected evidence unchanged. Original local planning history is excluded from the public repository."
+}

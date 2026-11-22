@@ -1,0 +1,29 @@
+{
+  "episodes": 10,
+  "statuses": {
+    "completed": 10
+  },
+  "providers": {
+    "replay": 10
+  },
+  "worlds": {
+    "success": 2,
+    "failure": 2,
+    "timeout_committed": 3,
+    "timeout_absent": 3
+  },
+  "action_safe": {
+    "yes": 10
+  },
+  "claim_support": {
+    "supported": 10
+  },
+  "claim_truth": {
+    "true": 10
+  },
+  "exactly_one_effect": 8,
+  "duplicate_effects": 0,
+  "model_calls": 29,
+  "labels": 10,
+  "denominator_note": "Claim/action counts include ungradable episodes explicitly; completion counts all episodes."
+}
