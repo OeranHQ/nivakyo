@@ -1,0 +1,26 @@
+name: Offline checks
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Check complete public history
+        run: python3 scripts/check_publication.py --ref HEAD
+      - name: Run offline tests
+        run: make test
+      - name: Verify committed evidence
+        run: make validate
+      - name: Generate a fresh offline dataset
+        run: make demo
