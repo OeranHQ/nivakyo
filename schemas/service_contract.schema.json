@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Service evidence contract",
+  "description": "Declarative service guarantees; not runtime enforcement. Null time bounds are unknown, never zero.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "implementation",
+    "service",
+    "intent_identity",
+    "effect",
+    "idempotency",
+    "read",
+    "execution",
+    "retry"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "contract_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation": {
+      "enum": [
+        "implemented",
+        "specification_only"
+      ]
+    },
+    "service": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent_identity": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "per_successful_attempt",
+        "reversible_via_tools"
+      ],
+      "properties": {
+        "per_successful_attempt": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reversible_via_tools": {
+          "type": "boolean"
+        }
+      }
+    },
+    "idempotency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "scope",
+        "payload_match_required",
+        "coalesces_in_flight",
+        "retention",
+        "retention_ms"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "unsupported",
+            "atomic_same_key"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "payload_match_required": {
+          "type": "boolean"
+        },
+        "coalesces_in_flight": {
+          "type": "boolean"
+        },
+        "retention": {
+          "enum": [
+            "not_applicable",
+            "bounded",
+            "indefinite",
+            "unknown"
+          ]
+        },
+        "retention_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "complete_for_intent",
+        "max_visibility_lag_ms",
+        "proves_terminal_on_negative"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "none",
+            "fresh",
+            "stale",
+            "unknown"
+          ]
+        },
+        "complete_for_intent": {
+          "type": "boolean"
+        },
+        "max_visibility_lag_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "proves_terminal_on_negative": {
+          "type": "boolean"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_in_flight_ms",
+        "bound_origin",
+        "terminal_means_no_future_commit",
+        "boundary_order"
+      ],
+      "properties": {
+        "max_in_flight_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "bound_origin": {
+          "enum": [
+            "attempt_acceptance"
+          ]
+        },
+        "terminal_means_no_future_commit": {
+          "const": true
+        },
+        "boundary_order": {
+          "enum": [
+            "due_events_before_read"
+          ]
+        }
+      }
+    },
+    "retry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unprotected_requires_terminal_effect_free",
+        "preserve_intent_and_payload"
+      ],
+      "properties": {
+        "unprotected_requires_terminal_effect_free": {
+          "const": true
+        },
+        "preserve_intent_and_payload": {
+          "const": true
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "idempotency": {
+            "properties": {
+              "mode": {
+                "const": "unsupported"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "idempotency": {
+            "properties": {
+              "scope": {
+                "type": "null"
+              },
+              "payload_match_required": {
+                "const": false
+              },
+              "coalesces_in_flight": {
+                "const": false
+              },
+              "retention": {
+                "const": "not_applicable"
+              },
+              "retention_ms": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "idempotency": {
+            "properties": {
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "payload_match_required": {
+                "const": true
+              },
+              "coalesces_in_flight": {
+                "const": true
+              },
+              "retention": {
+                "enum": [
+                  "bounded",
+                  "indefinite",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "idempotency": {
+            "properties": {
+              "retention": {
+                "const": "bounded"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "idempotency": {
+            "properties": {
+              "retention_ms": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "idempotency": {
+            "properties": {
+              "retention_ms": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "read": {
+            "properties": {
+              "mode": {
+                "const": "fresh"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "read": {
+            "properties": {
+              "max_visibility_lag_ms": {
+                "const": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "read": {
+            "properties": {
+              "mode": {
+                "const": "none"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "read": {
+            "properties": {
+              "complete_for_intent": {
+                "const": false
+              },
+              "max_visibility_lag_ms": {
+                "type": "null"
+              },
+              "proves_terminal_on_negative": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "read": {
+            "properties": {
+              "proves_terminal_on_negative": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "read": {
+            "properties": {
+              "mode": {
+                "const": "fresh"
+              },
+              "complete_for_intent": {
+                "const": true
+              },
+              "max_visibility_lag_ms": {
+                "const": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

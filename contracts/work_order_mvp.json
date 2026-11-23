@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "contract_id": "work-order-mvp-v1",
+  "implementation": "implemented",
+  "service": "synthetic work orders",
+  "intent_identity": [
+    "intent_id",
+    "description"
+  ],
+  "effect": {
+    "per_successful_attempt": 1,
+    "reversible_via_tools": false
+  },
+  "idempotency": {
+    "mode": "unsupported",
+    "scope": null,
+    "payload_match_required": false,
+    "coalesces_in_flight": false,
+    "retention": "not_applicable",
+    "retention_ms": null
+  },
+  "read": {
+    "mode": "fresh",
+    "complete_for_intent": true,
+    "max_visibility_lag_ms": 0,
+    "proves_terminal_on_negative": true
+  },
+  "execution": {
+    "max_in_flight_ms": 0,
+    "bound_origin": "attempt_acceptance",
+    "terminal_means_no_future_commit": true,
+    "boundary_order": "due_events_before_read"
+  },
+  "retry": {
+    "unprotected_requires_terminal_effect_free": true,
+    "preserve_intent_and_payload": true
+  }
+}
