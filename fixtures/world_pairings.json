@@ -1,0 +1,93 @@
+[
+  {
+    "id": "timeout-shared-prefix",
+    "verification": "authoritative",
+    "steps": [
+      "write"
+    ],
+    "actual_world": "lost_ack",
+    "expected_worlds": [
+      "precommit_failure",
+      "lost_ack",
+      "late_commit"
+    ]
+  },
+  {
+    "id": "fresh-reveals-absence",
+    "verification": "authoritative",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "actual_world": "precommit_failure",
+    "expected_worlds": [
+      "precommit_failure"
+    ]
+  },
+  {
+    "id": "fresh-reveals-commit",
+    "verification": "authoritative",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "actual_world": "lost_ack",
+    "expected_worlds": [
+      "lost_ack"
+    ]
+  },
+  {
+    "id": "fresh-reveals-pending",
+    "verification": "authoritative",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "actual_world": "late_commit",
+    "expected_worlds": [
+      "late_commit"
+    ]
+  },
+  {
+    "id": "stale-empty-retains-three",
+    "verification": "stale",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "actual_world": "late_commit",
+    "expected_worlds": [
+      "precommit_failure",
+      "lost_ack",
+      "late_commit"
+    ]
+  },
+  {
+    "id": "stale-negative-after-lag-retains-absent-and-pending",
+    "verification": "stale",
+    "steps": [
+      "write",
+      3000,
+      "lookup"
+    ],
+    "actual_world": "late_commit",
+    "expected_worlds": [
+      "precommit_failure",
+      "late_commit"
+    ]
+  },
+  {
+    "id": "none-retains-ambiguity-after-wait",
+    "verification": "none",
+    "steps": [
+      "write",
+      7000
+    ],
+    "actual_world": "precommit_failure",
+    "expected_worlds": [
+      "precommit_failure",
+      "lost_ack",
+      "late_commit"
+    ]
+  }
+]

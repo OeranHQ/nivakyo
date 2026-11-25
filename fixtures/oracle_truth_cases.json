@@ -1,0 +1,897 @@
+[
+  {
+    "id": "initial-created-is-refuted",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [],
+    "config": {}
+  },
+  {
+    "id": "initial-future-creation-not-invented",
+    "predicate": {
+      "predicate": "created",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [],
+    "config": {}
+  },
+  {
+    "id": "initial-absence-supported",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [],
+    "config": {}
+  },
+  {
+    "id": "initial-zero-count-supported",
+    "predicate": {
+      "predicate": "effect_count",
+      "time": "current",
+      "value": 0
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [],
+    "config": {}
+  },
+  {
+    "id": "initial-pending-refuted",
+    "predicate": {
+      "predicate": "pending",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [],
+    "config": {}
+  },
+  {
+    "id": "initial-terminal-supported",
+    "predicate": {
+      "predicate": "terminal",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [],
+    "config": {}
+  },
+  {
+    "id": "lost-ack-lucky-current-creation",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "precommit-creation-contradiction",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "pending-not-created-yet",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "pending-future-creation-lucky",
+    "predicate": {
+      "predicate": "created",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "precommit-absence-lucky",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "lost-ack-absence-contradiction",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "pending-current-absence-lucky",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "pending-future-absence-contradiction",
+    "predicate": {
+      "predicate": "absent",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "pending-state-actually-true",
+    "predicate": {
+      "predicate": "pending",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "lost-ack-pending-actually-false",
+    "predicate": {
+      "predicate": "pending",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "settlement-removes-all-pending",
+    "predicate": {
+      "predicate": "pending",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "current-terminality-undecidable",
+    "predicate": {
+      "predicate": "terminal",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "settled-terminality-universal",
+    "predicate": {
+      "predicate": "terminal",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "lost-ack-one-effect-not-supported",
+    "predicate": {
+      "predicate": "effect_count",
+      "time": "current",
+      "value": 1
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "absent-zero-effects-not-supported",
+    "predicate": {
+      "predicate": "effect_count",
+      "time": "current",
+      "value": 0
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "no-two-effects-before-retry",
+    "predicate": {
+      "predicate": "effect_count",
+      "time": "current",
+      "value": 2
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "intended-payload-count-undecidable",
+    "predicate": {
+      "predicate": "intended_count",
+      "time": "current",
+      "value": 1
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "receipt-id-lucky",
+    "predicate": {
+      "predicate": "receipt",
+      "time": "current",
+      "value": "WO-000001"
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "fabricated-receipt-refuted",
+    "predicate": {
+      "predicate": "receipt",
+      "time": "current",
+      "value": "WO-999999"
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "future-completion-undecidable",
+    "predicate": {
+      "predicate": "completed",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-absent-creation-refuted",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-absent-is-terminal",
+    "predicate": {
+      "predicate": "terminal",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-absent-absence-supported",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-present-creation-supported",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-present-receipt-supported",
+    "predicate": {
+      "predicate": "receipt",
+      "time": "current",
+      "value": "WO-000001"
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-pending-is-not-current-completion",
+    "predicate": {
+      "predicate": "completed",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-pending-future-completion",
+    "predicate": {
+      "predicate": "completed",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-pending-terminal-refuted",
+    "predicate": {
+      "predicate": "terminal",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "authoritative-pending-current-absence",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {}
+  },
+  {
+    "id": "stale-negative-still-ambiguous",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-lag-minus-one-hides-commit",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      2999,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-lag-boundary-reveals-lost-ack",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      3000,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-before-pending-commit-current-creation-refuted",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      3999,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-before-pending-commit-future-ambiguous",
+    "predicate": {
+      "predicate": "created",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      3999,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-at-commit-empty-but-created",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      4000,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-visibility-minus-one-still-hidden",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      6999,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-visibility-boundary-reveals-late",
+    "predicate": {
+      "predicate": "created",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      7000,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "stale-terminal-negative-model-absence",
+    "predicate": {
+      "predicate": "absent",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      7000,
+      "lookup"
+    ],
+    "config": {
+      "verification": "stale"
+    }
+  },
+  {
+    "id": "fresh-before-commit-still-pending",
+    "predicate": {
+      "predicate": "pending",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "lookup",
+      3999
+    ],
+    "config": {}
+  },
+  {
+    "id": "fresh-at-commit-completed",
+    "predicate": {
+      "predicate": "completed",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "lookup",
+      4000
+    ],
+    "config": {}
+  },
+  {
+    "id": "verified-absent-retry-completes",
+    "predicate": {
+      "predicate": "completed",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      "lookup",
+      "retry"
+    ],
+    "config": {}
+  },
+  {
+    "id": "blind-lost-retry-two-effects",
+    "predicate": {
+      "predicate": "effect_count",
+      "time": "current",
+      "value": 2
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {}
+  },
+  {
+    "id": "blind-absent-retry-lucky-exact-one",
+    "predicate": {
+      "predicate": "exactly_one",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {}
+  },
+  {
+    "id": "blind-late-retry-future-duplicate",
+    "predicate": {
+      "predicate": "exactly_one",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "undecidable",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {}
+  },
+  {
+    "id": "blind-late-retry-current-exact-one",
+    "predicate": {
+      "predicate": "exactly_one",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {}
+  },
+  {
+    "id": "blind-retry-existence-supported-despite-unsafe-action",
+    "predicate": {
+      "predicate": "created",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {}
+  },
+  {
+    "id": "stable-key-lost-replay-completes",
+    "predicate": {
+      "predicate": "completed",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "lost_ack",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {
+      "keyed": true
+    }
+  },
+  {
+    "id": "stable-key-absent-retry-completes",
+    "predicate": {
+      "predicate": "completed",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "precommit_failure",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {
+      "keyed": true
+    }
+  },
+  {
+    "id": "stable-key-pending-replay-current-incomplete",
+    "predicate": {
+      "predicate": "completed",
+      "time": "current",
+      "value": null
+    },
+    "expected_support": "refuted",
+    "expected_truth": false,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {
+      "keyed": true
+    }
+  },
+  {
+    "id": "stable-key-pending-replay-future-exact",
+    "predicate": {
+      "predicate": "exactly_one",
+      "time": "settled",
+      "value": null
+    },
+    "expected_support": "supported",
+    "expected_truth": true,
+    "actual_world": "late_commit",
+    "steps": [
+      "write",
+      "retry"
+    ],
+    "config": {
+      "keyed": true
+    }
+  }
+]

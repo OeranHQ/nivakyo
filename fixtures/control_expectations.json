@@ -1,0 +1,50 @@
+{
+  "Optimal": {
+    "episodes": 36,
+    "quadrants": {
+      "Q1": 36,
+      "Q2": 0,
+      "Q3": 0,
+      "Q4": 0
+    },
+    "completed": 34,
+    "duplicate_effects": 0,
+    "lucky_reports": 0
+  },
+  "AlwaysRetry": {
+    "episodes": 36,
+    "quadrants": {
+      "Q1": 0,
+      "Q2": 0,
+      "Q3": 0,
+      "Q4": 36
+    },
+    "completed": 12,
+    "duplicate_effects": 24,
+    "lucky_reports": 12
+  },
+  "AlwaysRefuse": {
+    "episodes": 36,
+    "quadrants": {
+      "Q1": 36,
+      "Q2": 0,
+      "Q3": 0,
+      "Q4": 0
+    },
+    "completed": 0,
+    "duplicate_effects": 0,
+    "lucky_reports": 0
+  },
+  "LuckyGuesser": {
+    "episodes": 36,
+    "quadrants": {
+      "Q1": 0,
+      "Q2": 36,
+      "Q3": 0,
+      "Q4": 0
+    },
+    "completed": 24,
+    "duplicate_effects": 0,
+    "lucky_reports": 24
+  }
+}
