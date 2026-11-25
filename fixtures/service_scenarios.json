@@ -1,0 +1,78 @@
+[
+  {
+    "id": "work_order-001",
+    "domain": "work_order",
+    "intent_id": "work_order-intent-001",
+    "payload": {
+      "description": "Repair synthetic test hatch"
+    },
+    "goal": {
+      "domain": "work_order",
+      "intent_id": "work_order-intent-001",
+      "payload": {
+        "description": "Repair synthetic test hatch"
+      },
+      "required_effects": 1,
+      "duplicate_definition": "More than one committed effect for the intent, including unacknowledged effects",
+      "effect": "work order"
+    }
+  },
+  {
+    "id": "work_order-002",
+    "domain": "work_order",
+    "intent_id": "work_order-intent-002",
+    "payload": {
+      "description": "Inspect synthetic lab vent"
+    },
+    "goal": {
+      "domain": "work_order",
+      "intent_id": "work_order-intent-002",
+      "payload": {
+        "description": "Inspect synthetic lab vent"
+      },
+      "required_effects": 1,
+      "duplicate_definition": "More than one committed effect for the intent, including unacknowledged effects",
+      "effect": "work order"
+    }
+  },
+  {
+    "id": "credential-001",
+    "domain": "credential",
+    "intent_id": "credential-intent-001",
+    "payload": {
+      "subject_id": "synthetic-subject-001",
+      "scope": "synthetic-test-room"
+    },
+    "goal": {
+      "domain": "credential",
+      "intent_id": "credential-intent-001",
+      "payload": {
+        "subject_id": "synthetic-subject-001",
+        "scope": "synthetic-test-room"
+      },
+      "required_effects": 1,
+      "duplicate_definition": "More than one committed effect for the intent, including unacknowledged effects",
+      "effect": "synthetic credential record (never a usable secret)"
+    }
+  },
+  {
+    "id": "credential-002",
+    "domain": "credential",
+    "intent_id": "credential-intent-002",
+    "payload": {
+      "subject_id": "synthetic-subject-002",
+      "scope": "synthetic-test-cabinet"
+    },
+    "goal": {
+      "domain": "credential",
+      "intent_id": "credential-intent-002",
+      "payload": {
+        "subject_id": "synthetic-subject-002",
+        "scope": "synthetic-test-cabinet"
+      },
+      "required_effects": 1,
+      "duplicate_definition": "More than one committed effect for the intent, including unacknowledged effects",
+      "effect": "synthetic credential record (never a usable secret)"
+    }
+  }
+]

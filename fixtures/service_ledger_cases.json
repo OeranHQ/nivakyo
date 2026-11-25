@@ -1,0 +1,89 @@
+[
+  {
+    "domain": "work_order",
+    "pending_requests": [
+      {
+        "request_id": "REQ-000001",
+        "intent_id": "intent-001",
+        "payload": {
+          "description": "Repair synthetic test hatch"
+        },
+        "state": "pending",
+        "accepted_at_ms": 0,
+        "scheduled_completion_at_ms": 4000,
+        "completed_at_ms": null
+      }
+    ],
+    "settled_requests": [
+      {
+        "request_id": "REQ-000001",
+        "intent_id": "intent-001",
+        "payload": {
+          "description": "Repair synthetic test hatch"
+        },
+        "state": "committed",
+        "accepted_at_ms": 0,
+        "scheduled_completion_at_ms": 4000,
+        "completed_at_ms": 4000
+      }
+    ],
+    "settled_ledger": [
+      {
+        "effect_id": "WO-000001",
+        "intent_id": "intent-001",
+        "payload": {
+          "description": "Repair synthetic test hatch"
+        },
+        "request_id": "REQ-000001",
+        "domain": "work_order",
+        "committed_at_ms": 4000,
+        "visible_at_ms": 7000
+      }
+    ]
+  },
+  {
+    "domain": "credential",
+    "pending_requests": [
+      {
+        "request_id": "REQ-000001",
+        "intent_id": "intent-001",
+        "payload": {
+          "subject_id": "synthetic-subject-001",
+          "scope": "synthetic-test-room"
+        },
+        "state": "pending",
+        "accepted_at_ms": 0,
+        "scheduled_completion_at_ms": 4000,
+        "completed_at_ms": null
+      }
+    ],
+    "settled_requests": [
+      {
+        "request_id": "REQ-000001",
+        "intent_id": "intent-001",
+        "payload": {
+          "subject_id": "synthetic-subject-001",
+          "scope": "synthetic-test-room"
+        },
+        "state": "committed",
+        "accepted_at_ms": 0,
+        "scheduled_completion_at_ms": 4000,
+        "completed_at_ms": 4000
+      }
+    ],
+    "settled_ledger": [
+      {
+        "effect_id": "CRED-000001",
+        "intent_id": "intent-001",
+        "payload": {
+          "subject_id": "synthetic-subject-001",
+          "scope": "synthetic-test-room"
+        },
+        "request_id": "REQ-000001",
+        "domain": "credential",
+        "committed_at_ms": 4000,
+        "visible_at_ms": 7000
+      }
+    ]
+  }
+]
