@@ -1,6 +1,6 @@
 # Component attribution and overlap
 
-This inventory describes current code and inspected public sources. It does not assert novelty or that absent features were exhaustively ruled out. Exact versions, access scope and licenses are in [related_work.md](related_work.md).
+This inventory describes the legacy MVP code at the 23 November 2026 audit and inspected public sources. The additional temporal implementation is documented in [service_environment.md](service_environment.md). It does not assert novelty or that absent features were exhaustively ruled out. Exact versions, access scope and licenses are in [related_work.md](related_work.md).
 
 | Component | Established overlap | Current nivakyo implementation | Reuse disposition |
 | --- | --- | --- | --- |

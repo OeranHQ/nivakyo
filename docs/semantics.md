@@ -1,6 +1,6 @@
 # Service and evidence semantics
 
-This document defines the vocabulary for service-contract descriptions. The only currently implemented environment is `src/simulator.py`. Contract JSON describes guarantees; it does not enforce them or add capabilities to the simulator. The versioned schema is `schemas/service_contract.schema.json`; `contracts/work_order_mvp.json` describes the existing environment.
+This document defines the vocabulary for service-contract descriptions. The legacy MVP environment is `src/simulator.py`. The additional temporal environment is documented in [service_environment.md](service_environment.md). The MVP guarantees below remain specific to the legacy service. Contract JSON describes guarantees; it does not enforce them or add capabilities to the simulator. The versioned schema is `schemas/service_contract.schema.json`; `contracts/work_order_mvp.json` describes the existing environment.
 
 ## Intent, attempt and effect
 

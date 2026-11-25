@@ -25,3 +25,11 @@ For example, creation followed by a lost acknowledgment makes “the order was c
 ## Bounds and statuses
 
 The default loop allows six model decisions and no automatic provider retries. The CLI timeout bounds each process call. A final report produces `completed`; invalid decisions produce `protocol_error`; unavailable providers produce `infrastructure_error`; exhausted decisions produce `turn_limit`. Episode status does not establish task outcome: an effect may commit before a turn limit is reached.
+
+## Additional offline services
+
+`src/services/` implements a separate deterministic two-domain environment with virtual time, pending requests, append-only effects, authoritative/stale/absent verification and optional enforced keys. `src/contracts.py` provides a public-evidence-only intent-key guard baseline. See [the service environment](service_environment.md) for exact API, fault matrix, retention rules, observation boundaries and limitations. The model runner and retained MVP evidence continue to use the original synchronous environment described above.
+
+## Structured evaluator
+
+`src/worlds.py` replays explicit finite world sets and filters complete action/observation prefixes. `src/epistemic_oracle.py` evaluates structured propositions at report time or after hypothetical settlement. `src/action_scorer.py` separates recovery permission from realized effects; `src/metrics.py` keeps action/report quadrants, completion and missing-output denominators explicit. `src/controls.py` supplies offline scripted checks. See [oracle semantics and limitations](oracle.md). All hidden worlds and truth vectors are evaluator-only; these modules do not extract claims from natural-language model reports or change the existing live runner.

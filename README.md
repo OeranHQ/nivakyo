@@ -22,6 +22,8 @@ make review
 
 `make demo` writes fresh offline traces, fixture-derived labels and a summary under `results/demo-<timestamp>/`. It needs no network or credentials. `make validate` verifies the committed development evidence and exact replay. `make review` reconciles annotations with trace hashes. Offline fixtures test the software; they are not additional model samples.
 
+The additional [offline service environment](docs/service_environment.md) models synthetic credential issuance and work orders with pending execution, stale reads, enforced keys and observable guard decisions. The existing model runner continues to use the original MVP.
+
 ## Live model evaluation
 
 Install and authenticate the Codex CLI separately, then run:
@@ -47,6 +49,8 @@ The repository also contains ten separately accounted-for CLI initialization fai
 ## Documentation
 
 - [Architecture and service guarantees](docs/architecture.md)
+- [Temporal service environment and recovery contracts](docs/service_environment.md)
+- [Compatible-world oracle and scripted scoring controls](docs/oracle.md)
 - [Trace and annotation formats](docs/data-format.md)
 - [Evidence inventory](docs/evidence.md)
 - [Contributing and granular commits](CONTRIBUTING.md)
